@@ -1,12 +1,17 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 const MainContext = createContext();
 
 const ProvideContext = ({ children }) => {
 
     const [sideBaropen, setSideBaropen] = useState(false);
+    const [auth, setAuth] = useState(null);
 
-    const Values = {sideBaropen, setSideBaropen}
+    useEffect(() => {
+      
+    }, [])
+    
+    const Values = {sideBaropen, setSideBaropen, auth, setAuth}
   return (
     <MainContext.Provider value={Values} >
         {children}
